@@ -1,2 +1,2 @@
 # Projects
-This Repository contains my projects.
+This Repository contains my Demo portfolio.
