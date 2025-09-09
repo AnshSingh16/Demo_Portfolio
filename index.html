@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .tree {
+      text-align: center;
+    }
+
+    .node {
+      background: #1e293b;
+      padding: 15px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .node:hover {
+      transform: scale(1.05);
+      background: #334155;
+    }
+
+    .branch {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.6s ease, opacity 0.6s ease;
+      position: relative;
+    }
+
+    .branch.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .line {
+      width: 2px;
+      height: 0;
+      background: #475569;
+      margin: 0 auto;
+      transition: height 0.6s ease;
+    }
+
+    .branch.open .line {
+      height: 20px;
+    }
+
+    .children {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .branch.open .children {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tree">
+    <!-- Central Node -->
+    <div class="node" onclick="toggleBranch('main')">🌿 Ansh Singh</div>
+
+    <div id="main" class="branch">
+      <div class="line"></div>
+      <div class="children">
+        <div class="node" onclick="toggleBranch('about')">🙋 About Me</div>
+        <div class="node" onclick="toggleBranch('skills')">🛠 Skills</div>
+        <div class="node" onclick="toggleBranch('projects')">💻 Projects</div>
+        <div class="node" onclick="toggleBranch('contact')">📬 Contact</div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="branch">
+      <div class="line"></div>
+      <div class="children">
+        <div class="node">I’m an AI/ML student passionate about coding & innovation.</div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div id="skills" class="branch">
+      <div class="line"></div>
+      <div class="children">
+        <div class="node">Python</div>
+        <div class="node">Machine Learning</div>
+        <div class="node">Web Dev</div>
+        <div class="node">Data Science</div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="branch">
+      <div class="line"></div>
+      <div class="children">
+        <div class="node">AI Chatbot</div>
+        <div class="node">Portfolio Website</div>
+        <div class="node">Data Visualizer</div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="branch">
+      <div class="line"></div>
+      <div class="children">
+        <div class="node">📧 anshsingh@email.com</div>
+        <div class="node">🔗 LinkedIn</div>
+        <div class="node">💼 GitHub</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleBranch(id) {
+      const branch = document.getElementById(id);
+      branch.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
