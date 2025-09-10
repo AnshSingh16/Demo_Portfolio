@@ -14,7 +14,7 @@ Built with **HTML, CSS, and JavaScript**, this portfolio expands smoothly with a
 
 ## 🚀 Demo
 
-<a href="https://anshsingh16.github.io/Demo_Portfolio/"> Porfolio </a>
+<a href="https://anshsingh16.github.io/Demo_Portfolio/"> Portfolio </a>
 
 ## 🛠 Tech Stack
 - **HTML5** – Structure  
